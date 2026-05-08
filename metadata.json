@@ -1,0 +1,6 @@
+{
+  "name": "Win95 Expense Manager",
+  "description": "A retro-themed 1990s style Expense Management system built with React, Express, and PostgreSQL.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

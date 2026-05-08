@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "MS Sans Serif", "Tahoma", sans-serif;
+  --font-mono: "Courier New", monospace;
+  --color-win-gray: #c0c0c0;
+  --color-win-white: #ffffff;
+  --color-win-dark-gray: #808080;
+  --color-win-black: #000000;
+  --color-win-blue: #000080;
+}
+
+@layer base {
+  body {
+    background-color: #008080; /* Classic Teal background */
+    font-family: var(--font-sans);
+    color: var(--color-win-black);
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  /* Win95 Outset Border */
+  .win-outset {
+    border: 2px solid;
+    border-top-color: var(--color-win-white);
+    border-left-color: var(--color-win-white);
+    border-right-color: var(--color-win-dark-gray);
+    border-bottom-color: var(--color-win-dark-gray);
+    background-color: var(--color-win-gray);
+  }
+
+  /* Win95 Inset Border */
+  .win-inset {
+    border: 2px solid;
+    border-top-color: var(--color-win-dark-gray);
+    border-left-color: var(--color-win-dark-gray);
+    border-right-color: var(--color-win-white);
+    border-bottom-color: var(--color-win-white);
+    background-color: var(--color-win-gray);
+  }
+
+  /* Win95 Button */
+  .win-button {
+    padding: 2px 10px;
+    background-color: var(--color-win-gray);
+    border: 2px solid;
+    border-top-color: var(--color-win-white);
+    border-left-color: var(--color-win-white);
+    border-right-color: var(--color-win-dark-gray);
+    border-bottom-color: var(--color-win-dark-gray);
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .win-button:active {
+    border-top-color: var(--color-win-dark-gray);
+    border-left-color: var(--color-win-dark-gray);
+    border-right-color: var(--color-win-white);
+    border-bottom-color: var(--color-win-white);
+    padding-top: 3px;
+    padding-left: 11px;
+    padding-right: 9px;
+    padding-bottom: 1px;
+  }
+
+  .win-button:disabled {
+    color: var(--color-win-dark-gray);
+    cursor: not-allowed;
+  }
+
+  /* Win95 Input */
+  .win-input {
+    background-color: var(--color-win-white);
+    border: 2px solid;
+    border-top-color: var(--color-win-dark-gray);
+    border-left-color: var(--color-win-dark-gray);
+    border-right-color: var(--color-win-white);
+    border-bottom-color: var(--color-win-white);
+    padding: 2px 4px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    outline: none;
+  }
+
+  /* Title Bar */
+  .win-title-bar {
+    background-color: var(--color-win-blue);
+    color: var(--color-win-white);
+    padding: 3px 2px 3px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .win-title-bar-text {
+    flex-grow: 1;
+  }
+
+  .win-title-bar-controls {
+    display: flex;
+    gap: 2px;
+  }
+
+  .win-control-button {
+    width: 16px;
+    height: 14px;
+    background-color: var(--color-win-gray);
+    border: 1px solid;
+    border-top-color: var(--color-win-white);
+    border-left-color: var(--color-win-white);
+    border-right-color: var(--color-win-dark-gray);
+    border-bottom-color: var(--color-win-dark-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: black;
+  }
+
+  @media print {
+    .print-hidden {
+      display: none !important;
+    }
+    body {
+      background-color: white !important;
+      color: black !important;
+    }
+    .win-outset, .win-inset, .win-window {
+      border: 1px solid black !important;
+      box-shadow: none !important;
+      background-color: white !important;
+    }
+    .win-title-bar {
+      background-color: #eee !important;
+      color: black !important;
+      border-bottom: 2px solid black !important;
+    }
+    .break-inside-avoid {
+      break-inside: avoid;
+    }
+    main {
+       width: 100% !important;
+       margin: 0 !important;
+       padding: 2cm !important;
+    }
+  }
+}
